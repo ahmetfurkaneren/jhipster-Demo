@@ -1,0 +1,191 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-paketler-heading" jhiTranslate="jhipsterDemoApp.paketler.home.createOrEditLabel">Create or edit a Paketler</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.paketAdi" for="field_paketAdi">Paket Adi</label>
+                    <input type="text" class="form-control" name="paketAdi" id="field_paketAdi"
+                           formControlName="paketAdi"/>
+                    <div *ngIf="editForm.get('paketAdi')!.invalid && (editForm.get('paketAdi')!.dirty || editForm.get('paketAdi')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('paketAdi')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.aciklama" for="field_aciklama">Aciklama</label>
+                    <input type="text" class="form-control" name="aciklama" id="field_aciklama"
+                           formControlName="aciklama"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.baslangicTarihi" for="field_baslangicTarihi">Baslangic Tarihi</label>
+                    <div class="d-flex">
+                        <input id="field_baslangicTarihi" type="datetime-local" class="form-control" name="baslangicTarihi" formControlName="baslangicTarihi" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('baslangicTarihi')!.invalid && (editForm.get('baslangicTarihi')!.dirty || editForm.get('baslangicTarihi')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('baslangicTarihi')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('baslangicTarihi')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.bitisTarihi" for="field_bitisTarihi">Bitis Tarihi</label>
+                    <div class="d-flex">
+                        <input id="field_bitisTarihi" type="datetime-local" class="form-control" name="bitisTarihi" formControlName="bitisTarihi" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('bitisTarihi')!.invalid && (editForm.get('bitisTarihi')!.dirty || editForm.get('bitisTarihi')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('bitisTarihi')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('bitisTarihi')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.fiyat" for="field_fiyat">Fiyat</label>
+                    <input type="number" class="form-control" name="fiyat" id="field_fiyat"
+                           formControlName="fiyat"/>
+                    <div *ngIf="editForm.get('fiyat')!.invalid && (editForm.get('fiyat')!.dirty || editForm.get('fiyat')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fiyat')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fiyat')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.yeniMusteriFiyat" for="field_yeniMusteriFiyat">Yeni Musteri Fiyat</label>
+                    <input type="number" class="form-control" name="yeniMusteriFiyat" id="field_yeniMusteriFiyat"
+                           formControlName="yeniMusteriFiyat"/>
+                    <div *ngIf="editForm.get('yeniMusteriFiyat')!.invalid && (editForm.get('yeniMusteriFiyat')!.dirty || editForm.get('yeniMusteriFiyat')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('yeniMusteriFiyat')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('yeniMusteriFiyat')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.tahahutSure" for="field_tahahutSure">Tahahut Sure</label>
+                    <input type="number" class="form-control" name="tahahutSure" id="field_tahahutSure"
+                           formControlName="tahahutSure"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.dakika" for="field_dakika">Dakika</label>
+                    <input type="number" class="form-control" name="dakika" id="field_dakika"
+                           formControlName="dakika"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.sms" for="field_sms">Sms</label>
+                    <input type="number" class="form-control" name="sms" id="field_sms"
+                           formControlName="sms"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.internet" for="field_internet">Internet</label>
+                    <input type="number" class="form-control" name="internet" id="field_internet"
+                           formControlName="internet"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.aktif" for="field_aktif">Aktif</label>
+                    <select class="form-control" name="aktif" formControlName="aktif" id="field_aktif">
+                        <option value="Akrif">{{ 'jhipsterDemoApp.Aktif.Akrif' | translate }}</option>
+                        <option value="Pasif">{{ 'jhipsterDemoApp.Aktif.Pasif' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.tip" for="field_tip">Tip</label>
+                    <select class="form-control" name="tip" formControlName="tip" id="field_tip">
+                        <option value="AnaPaket">{{ 'jhipsterDemoApp.Tip.AnaPaket' | translate }}</option>
+                        <option value="EkPaket">{{ 'jhipsterDemoApp.Tip.EkPaket' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.paketTipi" for="field_paketTipi">Paket Tipi</label>
+                    <select class="form-control" name="paketTipi" formControlName="paketTipi" id="field_paketTipi">
+                        <option value="Faturali">{{ 'jhipsterDemoApp.PaketTipi.Faturali' | translate }}</option>
+                        <option value="Faturasiz">{{ 'jhipsterDemoApp.PaketTipi.Faturasiz' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.donem" for="field_donem">Donem</label>
+                    <select class="form-control" name="donem" formControlName="donem" id="field_donem">
+                        <option value="Aylik">{{ 'jhipsterDemoApp.Donem.Aylik' | translate }}</option>
+                        <option value="Haftalik">{{ 'jhipsterDemoApp.Donem.Haftalik' | translate }}</option>
+                        <option value="Gunluk">{{ 'jhipsterDemoApp.Donem.Gunluk' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('donem')!.invalid && (editForm.get('donem')!.dirty || editForm.get('donem')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('donem')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.dakikaUcret" for="field_dakikaUcret">Dakika Ucret</label>
+                    <input type="number" class="form-control" name="dakikaUcret" id="field_dakikaUcret"
+                           formControlName="dakikaUcret"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.smsUcret" for="field_smsUcret">Sms Ucret</label>
+                    <input type="number" class="form-control" name="smsUcret" id="field_smsUcret"
+                           formControlName="smsUcret"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.paketler.internetUcret" for="field_internetUcret">Internet Ucret</label>
+                    <input type="number" class="form-control" name="internetUcret" id="field_internetUcret"
+                           formControlName="internetUcret"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,28 @@
+{
+  "jhipsterDemoApp": {
+    "sozlesme": {
+      "home": {
+        "title": "Sozlesmes",
+        "createLabel": "Maak een nieuwe Sozlesme",
+        "createOrEditLabel": "Maak of wijzig een Sozlesme",
+        "notFound": "No Sozlesmes found"
+      },
+      "created": "A new Sozlesme is created with identifier {{ param }}",
+      "updated": "A Sozlesme is updated with identifier {{ param }}",
+      "deleted": "A Sozlesme is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Sozlesme {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Sozlesme"
+      },
+      "tip": "Tip",
+      "tarih": "Tarih",
+      "bitisTarihi": "Bitis Tarihi",
+      "sozlesmeninPaketleri": "Sozlesmenin Paketleri",
+      "fatura": "Fatura",
+      "musteri": "Musteri",
+      "telNo": "Tel No"
+    }
+  }
+}

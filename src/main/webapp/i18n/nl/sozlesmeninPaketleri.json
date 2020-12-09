@@ -1,0 +1,32 @@
+{
+  "jhipsterDemoApp": {
+    "sozlesmeninPaketleri": {
+      "home": {
+        "title": "Sozlesmenin Paketleris",
+        "createLabel": "Maak een nieuwe Sozlesmenin Paketleri",
+        "createOrEditLabel": "Maak of wijzig een Sozlesmenin Paketleri",
+        "notFound": "No Sozlesmenin Paketleris found"
+      },
+      "created": "A new Sozlesmenin Paketleri is created with identifier {{ param }}",
+      "updated": "A Sozlesmenin Paketleri is updated with identifier {{ param }}",
+      "deleted": "A Sozlesmenin Paketleri is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Sozlesmenin Paketleri {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Sozlesmenin Paketleri"
+      },
+      "fiyat": "Fiyat",
+      "baslangicTarihi": "Baslangic Tarihi",
+      "bitisTarihi": "Bitis Tarihi",
+      "kalanDakika": "Kalan Dakika",
+      "kalanSms": "Kalan Sms",
+      "kalanInternet": "Kalan Internet",
+      "dakikaKullanim": "Dakika Kullanim",
+      "smsKullanim": "Sms Kullanim",
+      "internetKullanim": "Internet Kullanim",
+      "sozlesme": "Sozlesme",
+      "paketler": "Paketler"
+    }
+  }
+}

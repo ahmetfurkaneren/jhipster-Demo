@@ -1,0 +1,39 @@
+{
+  "jhipsterDemoApp": {
+    "paketler": {
+      "home": {
+        "title": "Paketlers",
+        "createLabel": "Создать новый Paketler",
+        "createOrEditLabel": "Создать или отредактировать Paketler",
+        "notFound": "No Paketlers found"
+      },
+      "created": "Новый Paketler создан с идентификатором {{ param }}",
+      "updated": "Paketler обновлен с идентификатором {{ param }}",
+      "deleted": "Paketler удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Paketler {{ id }}?"
+      },
+      "detail": {
+        "title": "Paketler"
+      },
+      "paketAdi": "Paket Adi",
+      "aciklama": "Aciklama",
+      "baslangicTarihi": "Baslangic Tarihi",
+      "bitisTarihi": "Bitis Tarihi",
+      "fiyat": "Fiyat",
+      "yeniMusteriFiyat": "Yeni Musteri Fiyat",
+      "tahahutSure": "Tahahut Sure",
+      "dakika": "Dakika",
+      "sms": "Sms",
+      "internet": "Internet",
+      "aktif": "Aktif",
+      "tip": "Tip",
+      "paketTipi": "Paket Tipi",
+      "donem": "Donem",
+      "dakikaUcret": "Dakika Ucret",
+      "smsUcret": "Sms Ucret",
+      "internetUcret": "Internet Ucret",
+      "sozlesmeninPaketleri": "Sozlesmenin Paketleri"
+    }
+  }
+}

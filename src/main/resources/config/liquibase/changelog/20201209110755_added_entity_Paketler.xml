@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+        <property name="autoIncrement" value="true"/>
+
+    <!--
+        Added the entity Paketler.
+    -->
+    <changeSet id="20201209110755-1" author="jhipster">
+        <createTable tableName="paketler">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="paket_adi" type="varchar(255)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="ux_paketler_paket_adi" />
+            </column>
+            <column name="aciklama" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="baslangic_tarihi" type="datetime">
+                <constraints nullable="false" />
+            </column>
+            <column name="bitis_tarihi" type="datetime">
+                <constraints nullable="false" />
+            </column>
+            <column name="fiyat" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="yeni_musteri_fiyat" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="tahahut_sure" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="dakika" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="sms" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="internet" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="aktif" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="tip" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="paket_tipi" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="donem" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="dakika_ucret" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sms_ucret" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="internet_ucret" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="paketler" columnName="baslangic_tarihi" columnDataType="datetime"/>
+        <dropDefaultValue tableName="paketler" columnName="bitis_tarihi" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20201209110755-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20201209110755-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/paketler.csv"
+                  separator=";"
+                  tableName="paketler">
+            <column name="id" type="numeric"/>
+            <column name="paket_adi" type="string"/>
+            <column name="aciklama" type="string"/>
+            <column name="baslangic_tarihi" type="datetime"/>
+            <column name="bitis_tarihi" type="datetime"/>
+            <column name="fiyat" type="numeric"/>
+            <column name="yeni_musteri_fiyat" type="numeric"/>
+            <column name="tahahut_sure" type="numeric"/>
+            <column name="dakika" type="numeric"/>
+            <column name="sms" type="numeric"/>
+            <column name="internet" type="numeric"/>
+            <column name="aktif" type="string"/>
+            <column name="tip" type="string"/>
+            <column name="paket_tipi" type="string"/>
+            <column name="donem" type="string"/>
+            <column name="dakika_ucret" type="numeric"/>
+            <column name="sms_ucret" type="numeric"/>
+            <column name="internet_ucret" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

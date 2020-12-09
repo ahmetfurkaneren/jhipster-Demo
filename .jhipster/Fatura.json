@@ -1,0 +1,51 @@
+{
+  "name": "Fatura",
+  "fields": [
+    {
+      "fieldName": "ilkOdemeTarihi",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "sonOdemeTarihi",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "odenenTarih",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "toplamTutar",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sozlesme",
+      "otherEntityRelationshipName": "fatura",
+      "relationshipValidateRules": "required",
+      "relationshipName": "sozlesme",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201209111555",
+  "entityTableName": "fatura",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,155 @@
+entity Musteri {
+	ID Integer required,
+	Ad String required,
+	Soyad String required,
+	Email String required unique,	
+	Parola String required,
+	TC String minlength(11) maxlength(11) required,
+	MusteriTipi MusteriTipi,
+	DogumTarihi Instant required
+}
+
+enum MusteriTipi {
+    Bireysel, Kurumsal
+}
+
+entity SirketBilgileri {
+	ID Integer required,
+	SirketAdi String required,
+	SirketAdresi String required
+}
+
+relationship OneToOne {
+	SirketBilgileri{musteri(Ad) required} to Musteri
+}
+
+entity Paketler {
+	ID Integer required,
+	PaketAdi String required unique,
+	Aciklama String,
+    BaslangicTarihi Instant required,
+	BitisTarihi Instant required,
+	Fiyat Long required,
+ 	YeniMusteriFiyat Long required,
+	TahahutSure Integer,
+	Dakika Integer,
+	Sms Integer,
+	Internet Integer,
+	Aktif Aktif,
+	Tip Tip,
+	PaketTipi PaketTipi,
+	Donem Donem required,
+	DakikaUcret Long,
+	SmsUcret Long,
+	InternetUcret Long
+}
+
+enum Aktif {
+    Akrif, Pasif
+}
+
+enum Tip {
+    AnaPaket, EkPaket
+}
+
+enum PaketTipi {
+    Faturali, Faturasiz
+}
+
+enum Donem {
+    Aylik, Haftalik, Gunluk
+}
+
+entity TelNo {
+	ID Integer required,
+	Numara Integer unique required 
+}
+
+entity Sozlesme {
+	ID Integer required,
+	Tip Tip,
+	Tarih Instant required,
+	BitisTarihi Instant
+}
+
+relationship OneToMany {
+	Musteri to Sozlesme{musteri(Ad) required},
+    TelNo to Sozlesme{telNo(Numara) required}
+}
+
+entity SimKartBilgileri {
+	ID Integer required,
+	PinNo Integer max(4) required,
+	PukNo Integer max(8) required,
+	Barkod String required,
+	BitMiktari Integer required
+}
+
+relationship OneToOne {
+	SimKartBilgileri{sozlesme required} to Sozlesme
+}
+
+entity SozlesmeninPaketleri {
+	ID Integer required,
+	Fiyat Integer required,
+	BaslangicTarihi Instant required,
+	BitisTarihi Instant required,
+	KalanDakika Integer required,
+	KalanSms Integer required,
+	KalanInternet Integer required
+}
+
+relationship OneToMany {
+	Sozlesme  to SozlesmeninPaketleri{sozlesme required},
+    Paketler to SozlesmeninPaketleri{paketler(PaketAdi) required}
+}
+
+entity DakikaKullanim {
+	ID Integer required,
+	Tarih Instant required,
+	Miktar Integer required
+}
+
+relationship OneToMany {
+	SozlesmeninPaketleri to DakikaKullanim{sozlesmeninPaketleri required},
+    TelNo to DakikaKullanim{telNo(Numara) required}
+}
+
+entity SmsKullanim {
+	ID Integer required,
+	Tarih Instant required,
+	Icerik String required
+}
+
+relationship OneToMany {
+	SozlesmeninPaketleri to SmsKullanim{sozlesmeninPaketleri required},
+    TelNo to SmsKullanim{telNo(Numara) required}
+}
+
+
+entity InternetKullanim {
+	ID Integer required,
+	Tarih Instant required,
+	Miktar Long required
+}
+
+relationship OneToMany {
+	SozlesmeninPaketleri to InternetKullanim{sozlesmeninPaketleri required}
+}
+
+entity Fatura {
+	ID Integer required,
+	IlkOdemeTarihi Instant required,
+	SonOdemeTarihi Instant required,
+	OdenenTarih Instant,
+	ToplamTutar Long required
+}
+
+relationship OneToMany {
+	Sozlesme to Fatura{sozlesme required} 
+}
+
+
+
+
+

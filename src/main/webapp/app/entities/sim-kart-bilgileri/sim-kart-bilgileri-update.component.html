@@ -1,0 +1,108 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-sim-kart-bilgileri-heading" jhiTranslate="jhipsterDemoApp.simKartBilgileri.home.createOrEditLabel">Create or edit a Sim Kart Bilgileri</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.simKartBilgileri.pinNo" for="field_pinNo">Pin No</label>
+                    <input type="number" class="form-control" name="pinNo" id="field_pinNo"
+                           formControlName="pinNo"/>
+                    <div *ngIf="editForm.get('pinNo')!.invalid && (editForm.get('pinNo')!.dirty || editForm.get('pinNo')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pinNo')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pinNo')?.errors?.max" jhiTranslate="entity.validation.max" [translateValues]="{ max: 4 }">
+                            This field cannot be more than 4.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('pinNo')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.simKartBilgileri.pukNo" for="field_pukNo">Puk No</label>
+                    <input type="number" class="form-control" name="pukNo" id="field_pukNo"
+                           formControlName="pukNo"/>
+                    <div *ngIf="editForm.get('pukNo')!.invalid && (editForm.get('pukNo')!.dirty || editForm.get('pukNo')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pukNo')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('pukNo')?.errors?.max" jhiTranslate="entity.validation.max" [translateValues]="{ max: 8 }">
+                            This field cannot be more than 8.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('pukNo')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.simKartBilgileri.barkod" for="field_barkod">Barkod</label>
+                    <input type="text" class="form-control" name="barkod" id="field_barkod"
+                           formControlName="barkod"/>
+                    <div *ngIf="editForm.get('barkod')!.invalid && (editForm.get('barkod')!.dirty || editForm.get('barkod')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('barkod')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.simKartBilgileri.bitMiktari" for="field_bitMiktari">Bit Miktari</label>
+                    <input type="number" class="form-control" name="bitMiktari" id="field_bitMiktari"
+                           formControlName="bitMiktari"/>
+                    <div *ngIf="editForm.get('bitMiktari')!.invalid && (editForm.get('bitMiktari')!.dirty || editForm.get('bitMiktari')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('bitMiktari')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('bitMiktari')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.simKartBilgileri.sozlesme" for="field_sozlesme">Sozlesme</label>
+                    <select class="form-control" id="field_sozlesme" name="sozlesme" formControlName="sozlesme">
+                        <option *ngIf="!editForm.get('sozlesme')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="sozlesmeOption.id === editForm.get('sozlesme')!.value?.id ? editForm.get('sozlesme')!.value : sozlesmeOption" *ngFor="let sozlesmeOption of sozlesmes; trackBy: trackById">{{ sozlesmeOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('sozlesme')!.invalid && (editForm.get('sozlesme')!.dirty || editForm.get('sozlesme')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('sozlesme')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

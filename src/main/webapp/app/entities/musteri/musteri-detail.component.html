@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="musteri">
+            <h2><span jhiTranslate="jhipsterDemoApp.musteri.detail.title">Musteri</span> {{ musteri.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterDemoApp.musteri.ad">Ad</span></dt>
+                <dd>
+                    <span>{{ musteri.ad }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.musteri.soyad">Soyad</span></dt>
+                <dd>
+                    <span>{{ musteri.soyad }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.musteri.email">Email</span></dt>
+                <dd>
+                    <span>{{ musteri.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.musteri.parola">Parola</span></dt>
+                <dd>
+                    <span>{{ musteri.parola }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.musteri.tC">T C</span></dt>
+                <dd>
+                    <span>{{ musteri.tC }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.musteri.musteriTipi">Musteri Tipi</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterDemoApp.MusteriTipi.' + musteri.musteriTipi }}">{{ musteri.musteriTipi }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.musteri.dogumTarihi">Dogum Tarihi</span></dt>
+                <dd>
+                    <span>{{ musteri.dogumTarihi }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/musteri', musteri.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

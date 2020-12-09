@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sirketBilgileri">
+            <h2><span jhiTranslate="jhipsterDemoApp.sirketBilgileri.detail.title">Sirket Bilgileri</span> {{ sirketBilgileri.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterDemoApp.sirketBilgileri.sirketAdi">Sirket Adi</span></dt>
+                <dd>
+                    <span>{{ sirketBilgileri.sirketAdi }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.sirketBilgileri.sirketAdresi">Sirket Adresi</span></dt>
+                <dd>
+                    <span>{{ sirketBilgileri.sirketAdresi }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.sirketBilgileri.musteri">Musteri</span></dt>
+                <dd>
+                    <div *ngIf="sirketBilgileri.musteri">
+                        <a [routerLink]="['/musteri', sirketBilgileri.musteri?.id, 'view']">{{ sirketBilgileri.musteri?.ad }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sirket-bilgileri', sirketBilgileri.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterDemoApp.paketler.home.title">Paketlers</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-paketler" [routerLink]="['/paketler/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterDemoApp.paketler.home.createLabel">
+            Create a new Paketler
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="paketlers?.length === 0">
+        <span jhiTranslate="jhipsterDemoApp.paketler.home.notFound">No paketlers found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="paketlers && paketlers.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.paketAdi">Paket Adi</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.aciklama">Aciklama</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.baslangicTarihi">Baslangic Tarihi</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.bitisTarihi">Bitis Tarihi</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.fiyat">Fiyat</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.yeniMusteriFiyat">Yeni Musteri Fiyat</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.tahahutSure">Tahahut Sure</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.dakika">Dakika</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.sms">Sms</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.internet">Internet</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.aktif">Aktif</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.tip">Tip</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.paketTipi">Paket Tipi</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.donem">Donem</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.dakikaUcret">Dakika Ucret</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.smsUcret">Sms Ucret</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.paketler.internetUcret">Internet Ucret</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let paketler of paketlers ;trackBy: trackId">
+                    <td><a [routerLink]="['/paketler', paketler.id, 'view']">{{ paketler.id }}</a></td>
+                    <td>{{ paketler.paketAdi }}</td>
+                    <td>{{ paketler.aciklama }}</td>
+                    <td>{{ paketler.baslangicTarihi | date:'medium' }}</td>
+                    <td>{{ paketler.bitisTarihi | date:'medium' }}</td>
+                    <td>{{ paketler.fiyat }}</td>
+                    <td>{{ paketler.yeniMusteriFiyat }}</td>
+                    <td>{{ paketler.tahahutSure }}</td>
+                    <td>{{ paketler.dakika }}</td>
+                    <td>{{ paketler.sms }}</td>
+                    <td>{{ paketler.internet }}</td>
+                    <td jhiTranslate="{{ 'jhipsterDemoApp.Aktif.' + paketler.aktif }}">{{ paketler.aktif }}</td>
+                    <td jhiTranslate="{{ 'jhipsterDemoApp.Tip.' + paketler.tip }}">{{ paketler.tip }}</td>
+                    <td jhiTranslate="{{ 'jhipsterDemoApp.PaketTipi.' + paketler.paketTipi }}">{{ paketler.paketTipi }}</td>
+                    <td jhiTranslate="{{ 'jhipsterDemoApp.Donem.' + paketler.donem }}">{{ paketler.donem }}</td>
+                    <td>{{ paketler.dakikaUcret }}</td>
+                    <td>{{ paketler.smsUcret }}</td>
+                    <td>{{ paketler.internetUcret }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/paketler', paketler.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/paketler', paketler.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(paketler)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

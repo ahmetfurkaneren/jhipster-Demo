@@ -1,0 +1,48 @@
+{
+  "name": "SmsKullanim",
+  "fields": [
+    {
+      "fieldName": "tarih",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "icerik",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sozlesmeninPaketleri",
+      "otherEntityRelationshipName": "smsKullanim",
+      "relationshipValidateRules": "required",
+      "relationshipName": "sozlesmeninPaketleri",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "telNo",
+      "otherEntityRelationshipName": "smsKullanim",
+      "relationshipValidateRules": "required",
+      "relationshipName": "telNo",
+      "otherEntityField": "numara"
+    }
+  ],
+  "changelogDate": "20201209111355",
+  "entityTableName": "sms_kullanim",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

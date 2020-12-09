@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterDemoApp.musteri.home.title">Musteris</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-musteri" [routerLink]="['/musteri/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterDemoApp.musteri.home.createLabel">
+            Create a new Musteri
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="musteris?.length === 0">
+        <span jhiTranslate="jhipsterDemoApp.musteri.home.notFound">No musteris found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="musteris && musteris.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.musteri.ad">Ad</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.musteri.soyad">Soyad</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.musteri.email">Email</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.musteri.parola">Parola</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.musteri.tC">T C</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.musteri.musteriTipi">Musteri Tipi</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.musteri.dogumTarihi">Dogum Tarihi</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let musteri of musteris ;trackBy: trackId">
+                    <td><a [routerLink]="['/musteri', musteri.id, 'view']">{{ musteri.id }}</a></td>
+                    <td>{{ musteri.ad }}</td>
+                    <td>{{ musteri.soyad }}</td>
+                    <td>{{ musteri.email }}</td>
+                    <td>{{ musteri.parola }}</td>
+                    <td>{{ musteri.tC }}</td>
+                    <td jhiTranslate="{{ 'jhipsterDemoApp.MusteriTipi.' + musteri.musteriTipi }}">{{ musteri.musteriTipi }}</td>
+                    <td>{{ musteri.dogumTarihi | date:'medium' }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/musteri', musteri.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/musteri', musteri.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(musteri)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

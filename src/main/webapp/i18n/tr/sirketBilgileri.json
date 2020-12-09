@@ -1,0 +1,24 @@
+{
+  "jhipsterDemoApp": {
+    "sirketBilgileri": {
+      "home": {
+        "title": "Sirket Bilgileris",
+        "createLabel": "Create a new Sirket Bilgileri",
+        "createOrEditLabel": "Create or edit a Sirket Bilgileri",
+        "notFound": "No Sirket Bilgileris found"
+      },
+      "created": "A new Sirket Bilgileri is created with identifier {{ param }}",
+      "updated": "A Sirket Bilgileri is updated with identifier {{ param }}",
+      "deleted": "A Sirket Bilgileri is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sirket Bilgileri {{ id }}?"
+      },
+      "detail": {
+        "title": "Sirket Bilgileri"
+      },
+      "sirketAdi": "Sirket Adi",
+      "sirketAdresi": "Sirket Adresi",
+      "musteri": "Musteri"
+    }
+  }
+}

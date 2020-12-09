@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-dakika-kullanim-heading" jhiTranslate="jhipsterDemoApp.dakikaKullanim.home.createOrEditLabel">Create or edit a Dakika Kullanim</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.dakikaKullanim.tarih" for="field_tarih">Tarih</label>
+                    <div class="d-flex">
+                        <input id="field_tarih" type="datetime-local" class="form-control" name="tarih" formControlName="tarih" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('tarih')!.invalid && (editForm.get('tarih')!.dirty || editForm.get('tarih')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('tarih')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('tarih')?.errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.dakikaKullanim.miktar" for="field_miktar">Miktar</label>
+                    <input type="number" class="form-control" name="miktar" id="field_miktar"
+                           formControlName="miktar"/>
+                    <div *ngIf="editForm.get('miktar')!.invalid && (editForm.get('miktar')!.dirty || editForm.get('miktar')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('miktar')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('miktar')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.dakikaKullanim.sozlesmeninPaketleri" for="field_sozlesmeninPaketleri">Sozlesmenin Paketleri</label>
+                    <select class="form-control" id="field_sozlesmeninPaketleri" name="sozlesmeninPaketleri" formControlName="sozlesmeninPaketleri">
+                        <option *ngIf="!editForm.get('sozlesmeninPaketleri')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="sozlesmeninPaketleriOption.id === editForm.get('sozlesmeninPaketleri')!.value?.id ? editForm.get('sozlesmeninPaketleri')!.value : sozlesmeninPaketleriOption" *ngFor="let sozlesmeninPaketleriOption of sozlesmeninpaketleris; trackBy: trackById">{{ sozlesmeninPaketleriOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('sozlesmeninPaketleri')!.invalid && (editForm.get('sozlesmeninPaketleri')!.dirty || editForm.get('sozlesmeninPaketleri')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('sozlesmeninPaketleri')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="jhipsterDemoApp.dakikaKullanim.telNo" for="field_telNo">Tel No</label>
+                    <select class="form-control" id="field_telNo" name="telNo" formControlName="telNo">
+                        <option *ngIf="!editForm.get('telNo')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="telNoOption.id === editForm.get('telNo')!.value?.id ? editForm.get('telNo')!.value : telNoOption" *ngFor="let telNoOption of telnos; trackBy: trackById">{{ telNoOption.numara }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('telNo')!.invalid && (editForm.get('telNo')!.dirty || editForm.get('telNo')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('telNo')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

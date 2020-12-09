@@ -1,0 +1,26 @@
+{
+  "jhipsterDemoApp": {
+    "fatura": {
+      "home": {
+        "title": "Faturas",
+        "createLabel": "Maak een nieuwe Fatura",
+        "createOrEditLabel": "Maak of wijzig een Fatura",
+        "notFound": "No Faturas found"
+      },
+      "created": "A new Fatura is created with identifier {{ param }}",
+      "updated": "A Fatura is updated with identifier {{ param }}",
+      "deleted": "A Fatura is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Fatura {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Fatura"
+      },
+      "ilkOdemeTarihi": "Ilk Odeme Tarihi",
+      "sonOdemeTarihi": "Son Odeme Tarihi",
+      "odenenTarih": "Odenen Tarih",
+      "toplamTutar": "Toplam Tutar",
+      "sozlesme": "Sozlesme"
+    }
+  }
+}

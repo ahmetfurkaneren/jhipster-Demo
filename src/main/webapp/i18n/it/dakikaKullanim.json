@@ -1,0 +1,25 @@
+{
+  "jhipsterDemoApp": {
+    "dakikaKullanim": {
+      "home": {
+        "title": "DakikaKullanims",
+        "createLabel": "Genera un nuovo Dakika Kullanim",
+        "createOrEditLabel": "Genera o modifica un Dakika Kullanim",
+        "notFound": "No Dakika Kullanims found"
+      },
+      "created": "&Egrave; stato generato un nuovo Dakika Kullanim con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Dakika Kullanim identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Dakika Kullanim con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Dakika Kullanim {{ id }}?"
+      },
+      "detail": {
+        "title": "Dakika Kullanim"
+      },
+      "tarih": "Tarih",
+      "miktar": "Miktar",
+      "sozlesmeninPaketleri": "Sozlesmenin Paketleri",
+      "telNo": "Tel No"
+    }
+  }
+}

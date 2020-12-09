@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity DakikaKullanim.
+    -->
+    <changeSet id="20201209111255-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="sozlesmenin_paketleri_id"
+                                 baseTableName="dakika_kullanim"
+                                 constraintName="fk_dakika_kullanim_sozlesmenin_paketleri_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sozlesmenin_paketleri"/>
+
+        <addForeignKeyConstraint baseColumnNames="tel_no_id"
+                                 baseTableName="dakika_kullanim"
+                                 constraintName="fk_dakika_kullanim_tel_no_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tel_no"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,59 @@
+{
+  "name": "SimKartBilgileri",
+  "fields": [
+    {
+      "fieldName": "pinNo",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "max",
+        "required"
+      ],
+      "fieldValidateRulesMax": "4"
+    },
+    {
+      "fieldName": "pukNo",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "max",
+        "required"
+      ],
+      "fieldValidateRulesMax": "8"
+    },
+    {
+      "fieldName": "barkod",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "bitMiktari",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "sozlesme",
+      "otherEntityRelationshipName": "simKartBilgileri",
+      "relationshipValidateRules": "required",
+      "relationshipName": "sozlesme",
+      "otherEntityField": "id",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201209111055",
+  "entityTableName": "sim_kart_bilgileri",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

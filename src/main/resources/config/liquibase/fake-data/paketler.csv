@@ -1,0 +1,11 @@
+id;paket_adi;aciklama;baslangic_tarihi;bitis_tarihi;fiyat;yeni_musteri_fiyat;tahahut_sure;dakika;sms;internet;aktif;tip;paket_tipi;donem;dakika_ucret;sms_ucret;internet_ucret
+1;Rubber Table markets;capacity sky blue back-end;2020-12-08T21:09:08;2020-12-08T12:23:42;93086;70243;4550;73936;49696;90544;Pasif;AnaPaket;Faturasiz;Haftalik;6673;5010;90726
+2;Guam;Intranet help-desk;2020-12-09T04:30:55;2020-12-09T09:40:51;25206;65685;22614;58159;21754;87006;Pasif;AnaPaket;Faturasiz;Haftalik;16918;45887;32858
+3;Overpass;Generic;2020-12-08T13:00:07;2020-12-08T11:38:28;24107;94814;82527;37701;61080;48561;Akrif;AnaPaket;Faturali;Haftalik;55255;3315;82437
+4;Bedfordshire;3rd generation;2020-12-09T05:50:28;2020-12-08T14:43:18;60925;1353;62193;39283;39888;45588;Akrif;AnaPaket;Faturasiz;Gunluk;34691;69530;92875
+5;parse Swedish Krona;matrix;2020-12-09T08:28:34;2020-12-09T05:36:14;80747;93847;28043;88387;93035;14036;Pasif;AnaPaket;Faturasiz;Aylik;83726;8388;10876
+6;Pants COM;array;2020-12-08T19:32:55;2020-12-08T13:57:24;63298;90124;7507;99467;98499;3658;Pasif;EkPaket;Faturasiz;Aylik;40333;65381;70745
+7;Handmade;cross-platform Cambridgeshire scalable;2020-12-09T04:17:43;2020-12-09T02:27:55;68591;80753;80015;94587;13229;55955;Akrif;EkPaket;Faturali;Aylik;75175;95184;68636
+8;payment Clothing;value-added;2020-12-09T04:06:04;2020-12-08T22:27:40;50298;4511;63439;48021;98485;51004;Pasif;EkPaket;Faturasiz;Gunluk;30566;97178;24480
+9;Re-engineered back up;pixel ability;2020-12-08T19:01:05;2020-12-08T22:47:05;90050;76692;78753;6556;10189;87385;Pasif;AnaPaket;Faturasiz;Gunluk;98958;62867;26607
+10;Movies China Rapid;withdrawal;2020-12-09T01:02:32;2020-12-09T09:05:01;68185;61747;54964;78974;21834;28821;Akrif;EkPaket;Faturasiz;Gunluk;76949;58937;65923

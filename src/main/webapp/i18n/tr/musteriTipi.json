@@ -1,0 +1,9 @@
+{
+  "jhipsterDemoApp": {
+    "MusteriTipi": {
+      "null": "",
+      "Bireysel": "Bireysel",
+      "Kurumsal": "Kurumsal"
+    }
+  }
+}

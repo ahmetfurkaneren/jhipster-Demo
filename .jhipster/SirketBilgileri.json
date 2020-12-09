@@ -1,0 +1,41 @@
+{
+  "name": "SirketBilgileri",
+  "fields": [
+    {
+      "fieldName": "sirketAdi",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "sirketAdresi",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "musteri",
+      "otherEntityRelationshipName": "sirketBilgileri",
+      "relationshipValidateRules": "required",
+      "relationshipName": "musteri",
+      "otherEntityField": "ad",
+      "ownerSide": true
+    }
+  ],
+  "changelogDate": "20201209110655",
+  "entityTableName": "sirket_bilgileri",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

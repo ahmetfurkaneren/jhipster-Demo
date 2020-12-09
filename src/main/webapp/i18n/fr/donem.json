@@ -1,0 +1,10 @@
+{
+  "jhipsterDemoApp": {
+    "Donem": {
+      "null": "",
+      "Aylik": "Aylik",
+      "Haftalik": "Haftalik",
+      "Gunluk": "Gunluk"
+    }
+  }
+}

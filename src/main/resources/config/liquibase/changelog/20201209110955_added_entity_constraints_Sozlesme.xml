@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity Sozlesme.
+    -->
+    <changeSet id="20201209110955-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="musteri_id"
+                                 baseTableName="sozlesme"
+                                 constraintName="fk_sozlesme_musteri_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="musteri"/>
+
+        <addForeignKeyConstraint baseColumnNames="tel_no_id"
+                                 baseTableName="sozlesme"
+                                 constraintName="fk_sozlesme_tel_no_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="tel_no"/>
+
+    </changeSet>
+</databaseChangeLog>

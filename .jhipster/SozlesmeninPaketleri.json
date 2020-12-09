@@ -1,0 +1,94 @@
+{
+  "name": "SozlesmeninPaketleri",
+  "fields": [
+    {
+      "fieldName": "fiyat",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "baslangicTarihi",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "bitisTarihi",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "kalanDakika",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "kalanSms",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "kalanInternet",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "dakikaKullanim",
+      "otherEntityRelationshipName": "sozlesmeninPaketleri",
+      "relationshipName": "dakikaKullanim"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "smsKullanim",
+      "otherEntityRelationshipName": "sozlesmeninPaketleri",
+      "relationshipName": "smsKullanim"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "internetKullanim",
+      "otherEntityRelationshipName": "sozlesmeninPaketleri",
+      "relationshipName": "internetKullanim"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sozlesme",
+      "otherEntityRelationshipName": "sozlesmeninPaketleri",
+      "relationshipValidateRules": "required",
+      "relationshipName": "sozlesme",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "paketler",
+      "otherEntityRelationshipName": "sozlesmeninPaketleri",
+      "relationshipValidateRules": "required",
+      "relationshipName": "paketler",
+      "otherEntityField": "paketAdi"
+    }
+  ],
+  "changelogDate": "20201209111155",
+  "entityTableName": "sozlesmenin_paketleri",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="smsKullanim">
+            <h2><span jhiTranslate="jhipsterDemoApp.smsKullanim.detail.title">Sms Kullanim</span> {{ smsKullanim.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterDemoApp.smsKullanim.tarih">Tarih</span></dt>
+                <dd>
+                    <span>{{ smsKullanim.tarih }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.smsKullanim.icerik">Icerik</span></dt>
+                <dd>
+                    <span>{{ smsKullanim.icerik }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.smsKullanim.sozlesmeninPaketleri">Sozlesmenin Paketleri</span></dt>
+                <dd>
+                    <div *ngIf="smsKullanim.sozlesmeninPaketleri">
+                        <a [routerLink]="['/sozlesmenin-paketleri', smsKullanim.sozlesmeninPaketleri?.id, 'view']">{{ smsKullanim.sozlesmeninPaketleri?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.smsKullanim.telNo">Tel No</span></dt>
+                <dd>
+                    <div *ngIf="smsKullanim.telNo">
+                        <a [routerLink]="['/tel-no', smsKullanim.telNo?.id, 'view']">{{ smsKullanim.telNo?.numara }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sms-kullanim', smsKullanim.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

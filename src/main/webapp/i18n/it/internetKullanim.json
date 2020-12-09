@@ -1,0 +1,24 @@
+{
+  "jhipsterDemoApp": {
+    "internetKullanim": {
+      "home": {
+        "title": "InternetKullanims",
+        "createLabel": "Genera un nuovo Internet Kullanim",
+        "createOrEditLabel": "Genera o modifica un Internet Kullanim",
+        "notFound": "No Internet Kullanims found"
+      },
+      "created": "&Egrave; stato generato un nuovo Internet Kullanim con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Internet Kullanim identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Internet Kullanim con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Internet Kullanim {{ id }}?"
+      },
+      "detail": {
+        "title": "Internet Kullanim"
+      },
+      "tarih": "Tarih",
+      "miktar": "Miktar",
+      "sozlesmeninPaketleri": "Sozlesmenin Paketleri"
+    }
+  }
+}

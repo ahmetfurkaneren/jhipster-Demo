@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sozlesmeninPaketleri">
+            <h2><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.detail.title">Sozlesmenin Paketleri</span> {{ sozlesmeninPaketleri.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.fiyat">Fiyat</span></dt>
+                <dd>
+                    <span>{{ sozlesmeninPaketleri.fiyat }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.baslangicTarihi">Baslangic Tarihi</span></dt>
+                <dd>
+                    <span>{{ sozlesmeninPaketleri.baslangicTarihi }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.bitisTarihi">Bitis Tarihi</span></dt>
+                <dd>
+                    <span>{{ sozlesmeninPaketleri.bitisTarihi }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.kalanDakika">Kalan Dakika</span></dt>
+                <dd>
+                    <span>{{ sozlesmeninPaketleri.kalanDakika }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.kalanSms">Kalan Sms</span></dt>
+                <dd>
+                    <span>{{ sozlesmeninPaketleri.kalanSms }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.kalanInternet">Kalan Internet</span></dt>
+                <dd>
+                    <span>{{ sozlesmeninPaketleri.kalanInternet }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.sozlesme">Sozlesme</span></dt>
+                <dd>
+                    <div *ngIf="sozlesmeninPaketleri.sozlesme">
+                        <a [routerLink]="['/sozlesme', sozlesmeninPaketleri.sozlesme?.id, 'view']">{{ sozlesmeninPaketleri.sozlesme?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.paketler">Paketler</span></dt>
+                <dd>
+                    <div *ngIf="sozlesmeninPaketleri.paketler">
+                        <a [routerLink]="['/paketler', sozlesmeninPaketleri.paketler?.id, 'view']">{{ sozlesmeninPaketleri.paketler?.paketAdi }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sozlesmenin-paketleri', sozlesmeninPaketleri.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

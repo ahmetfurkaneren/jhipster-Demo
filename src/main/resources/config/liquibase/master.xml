@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="now()" dbms="mysql, mariadb"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
+    <property name="clobType" value="clob" dbms="h2"/>
+    <property name="clobType" value="clob" dbms="mysql, oracle, mssql, mariadb, postgresql"/>
+    <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209110555_added_entity_Musteri.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209110655_added_entity_SirketBilgileri.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209110755_added_entity_Paketler.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209110855_added_entity_TelNo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209110955_added_entity_Sozlesme.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111055_added_entity_SimKartBilgileri.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111155_added_entity_SozlesmeninPaketleri.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111255_added_entity_DakikaKullanim.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111355_added_entity_SmsKullanim.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111455_added_entity_InternetKullanim.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111555_added_entity_Fatura.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20201209110655_added_entity_constraints_SirketBilgileri.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209110955_added_entity_constraints_Sozlesme.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111055_added_entity_constraints_SimKartBilgileri.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111155_added_entity_constraints_SozlesmeninPaketleri.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111255_added_entity_constraints_DakikaKullanim.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111355_added_entity_constraints_SmsKullanim.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111455_added_entity_constraints_InternetKullanim.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20201209111555_added_entity_constraints_Fatura.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+    <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
+</databaseChangeLog>

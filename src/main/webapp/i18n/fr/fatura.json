@@ -1,0 +1,26 @@
+{
+  "jhipsterDemoApp": {
+    "fatura": {
+      "home": {
+        "title": "Faturas",
+        "createLabel": "Créer un nouveau Fatura",
+        "createOrEditLabel": "Créer ou éditer un Fatura",
+        "notFound": "Aucun Fatura trouvé"
+      },
+      "created": "Un nouveau Fatura a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Fatura avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Fatura avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Fatura {{ id }} ?"
+      },
+      "detail": {
+        "title": "Fatura"
+      },
+      "ilkOdemeTarihi": "Ilk Odeme Tarihi",
+      "sonOdemeTarihi": "Son Odeme Tarihi",
+      "odenenTarih": "Odenen Tarih",
+      "toplamTutar": "Toplam Tutar",
+      "sozlesme": "Sozlesme"
+    }
+  }
+}

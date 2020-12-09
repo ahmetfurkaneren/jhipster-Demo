@@ -1,0 +1,39 @@
+{
+  "jhipsterDemoApp": {
+    "paketler": {
+      "home": {
+        "title": "Paketlers",
+        "createLabel": "Genera un nuovo Paketler",
+        "createOrEditLabel": "Genera o modifica un Paketler",
+        "notFound": "No Paketlers found"
+      },
+      "created": "&Egrave; stato generato un nuovo Paketler con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Paketler identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Paketler con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Paketler {{ id }}?"
+      },
+      "detail": {
+        "title": "Paketler"
+      },
+      "paketAdi": "Paket Adi",
+      "aciklama": "Aciklama",
+      "baslangicTarihi": "Baslangic Tarihi",
+      "bitisTarihi": "Bitis Tarihi",
+      "fiyat": "Fiyat",
+      "yeniMusteriFiyat": "Yeni Musteri Fiyat",
+      "tahahutSure": "Tahahut Sure",
+      "dakika": "Dakika",
+      "sms": "Sms",
+      "internet": "Internet",
+      "aktif": "Aktif",
+      "tip": "Tip",
+      "paketTipi": "Paket Tipi",
+      "donem": "Donem",
+      "dakikaUcret": "Dakika Ucret",
+      "smsUcret": "Sms Ucret",
+      "internetUcret": "Internet Ucret",
+      "sozlesmeninPaketleri": "Sozlesmenin Paketleri"
+    }
+  }
+}

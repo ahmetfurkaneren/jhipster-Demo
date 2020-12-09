@@ -1,0 +1,40 @@
+{
+  "name": "InternetKullanim",
+  "fields": [
+    {
+      "fieldName": "tarih",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "miktar",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sozlesmeninPaketleri",
+      "otherEntityRelationshipName": "internetKullanim",
+      "relationshipValidateRules": "required",
+      "relationshipName": "sozlesmeninPaketleri",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201209111455",
+  "entityTableName": "internet_kullanim",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

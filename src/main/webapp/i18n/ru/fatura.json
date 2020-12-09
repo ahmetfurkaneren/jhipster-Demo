@@ -1,0 +1,26 @@
+{
+  "jhipsterDemoApp": {
+    "fatura": {
+      "home": {
+        "title": "Faturas",
+        "createLabel": "Создать новый Fatura",
+        "createOrEditLabel": "Создать или отредактировать Fatura",
+        "notFound": "No Faturas found"
+      },
+      "created": "Новый Fatura создан с идентификатором {{ param }}",
+      "updated": "Fatura обновлен с идентификатором {{ param }}",
+      "deleted": "Fatura удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Fatura {{ id }}?"
+      },
+      "detail": {
+        "title": "Fatura"
+      },
+      "ilkOdemeTarihi": "Ilk Odeme Tarihi",
+      "sonOdemeTarihi": "Son Odeme Tarihi",
+      "odenenTarih": "Odenen Tarih",
+      "toplamTutar": "Toplam Tutar",
+      "sozlesme": "Sozlesme"
+    }
+  }
+}

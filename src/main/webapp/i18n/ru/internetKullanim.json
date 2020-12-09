@@ -1,0 +1,24 @@
+{
+  "jhipsterDemoApp": {
+    "internetKullanim": {
+      "home": {
+        "title": "Internet Kullanims",
+        "createLabel": "Создать новый Internet Kullanim",
+        "createOrEditLabel": "Создать или отредактировать Internet Kullanim",
+        "notFound": "No Internet Kullanims found"
+      },
+      "created": "Новый Internet Kullanim создан с идентификатором {{ param }}",
+      "updated": "Internet Kullanim обновлен с идентификатором {{ param }}",
+      "deleted": "Internet Kullanim удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Internet Kullanim {{ id }}?"
+      },
+      "detail": {
+        "title": "Internet Kullanim"
+      },
+      "tarih": "Tarih",
+      "miktar": "Miktar",
+      "sozlesmeninPaketleri": "Sozlesmenin Paketleri"
+    }
+  }
+}

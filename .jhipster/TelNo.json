@@ -1,0 +1,44 @@
+{
+  "name": "TelNo",
+  "fields": [
+    {
+      "fieldName": "numara",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "unique",
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "sozlesme",
+      "otherEntityRelationshipName": "telNo",
+      "relationshipName": "sozlesme"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "dakikaKullanim",
+      "otherEntityRelationshipName": "telNo",
+      "relationshipName": "dakikaKullanim"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "smsKullanim",
+      "otherEntityRelationshipName": "telNo",
+      "relationshipName": "smsKullanim"
+    }
+  ],
+  "changelogDate": "20201209110855",
+  "entityTableName": "tel_no",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

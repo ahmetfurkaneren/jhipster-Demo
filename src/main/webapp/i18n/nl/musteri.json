@@ -1,0 +1,29 @@
+{
+  "jhipsterDemoApp": {
+    "musteri": {
+      "home": {
+        "title": "Musteris",
+        "createLabel": "Maak een nieuwe Musteri",
+        "createOrEditLabel": "Maak of wijzig een Musteri",
+        "notFound": "No Musteris found"
+      },
+      "created": "A new Musteri is created with identifier {{ param }}",
+      "updated": "A Musteri is updated with identifier {{ param }}",
+      "deleted": "A Musteri is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Musteri {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Musteri"
+      },
+      "ad": "Ad",
+      "soyad": "Soyad",
+      "email": "Email",
+      "parola": "Parola",
+      "tC": "T C",
+      "musteriTipi": "Musteri Tipi",
+      "dogumTarihi": "Dogum Tarihi",
+      "sozlesme": "Sozlesme"
+    }
+  }
+}

@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="paketler">
+            <h2><span jhiTranslate="jhipsterDemoApp.paketler.detail.title">Paketler</span> {{ paketler.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.paketAdi">Paket Adi</span></dt>
+                <dd>
+                    <span>{{ paketler.paketAdi }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.aciklama">Aciklama</span></dt>
+                <dd>
+                    <span>{{ paketler.aciklama }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.baslangicTarihi">Baslangic Tarihi</span></dt>
+                <dd>
+                    <span>{{ paketler.baslangicTarihi }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.bitisTarihi">Bitis Tarihi</span></dt>
+                <dd>
+                    <span>{{ paketler.bitisTarihi }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.fiyat">Fiyat</span></dt>
+                <dd>
+                    <span>{{ paketler.fiyat }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.yeniMusteriFiyat">Yeni Musteri Fiyat</span></dt>
+                <dd>
+                    <span>{{ paketler.yeniMusteriFiyat }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.tahahutSure">Tahahut Sure</span></dt>
+                <dd>
+                    <span>{{ paketler.tahahutSure }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.dakika">Dakika</span></dt>
+                <dd>
+                    <span>{{ paketler.dakika }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.sms">Sms</span></dt>
+                <dd>
+                    <span>{{ paketler.sms }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.internet">Internet</span></dt>
+                <dd>
+                    <span>{{ paketler.internet }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.aktif">Aktif</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterDemoApp.Aktif.' + paketler.aktif }}">{{ paketler.aktif }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.tip">Tip</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterDemoApp.Tip.' + paketler.tip }}">{{ paketler.tip }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.paketTipi">Paket Tipi</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterDemoApp.PaketTipi.' + paketler.paketTipi }}">{{ paketler.paketTipi }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.donem">Donem</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterDemoApp.Donem.' + paketler.donem }}">{{ paketler.donem }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.dakikaUcret">Dakika Ucret</span></dt>
+                <dd>
+                    <span>{{ paketler.dakikaUcret }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.smsUcret">Sms Ucret</span></dt>
+                <dd>
+                    <span>{{ paketler.smsUcret }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.paketler.internetUcret">Internet Ucret</span></dt>
+                <dd>
+                    <span>{{ paketler.internetUcret }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/paketler', paketler.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

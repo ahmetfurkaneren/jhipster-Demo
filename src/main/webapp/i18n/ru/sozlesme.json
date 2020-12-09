@@ -1,0 +1,28 @@
+{
+  "jhipsterDemoApp": {
+    "sozlesme": {
+      "home": {
+        "title": "Sozlesmes",
+        "createLabel": "Создать новый Sozlesme",
+        "createOrEditLabel": "Создать или отредактировать Sozlesme",
+        "notFound": "No Sozlesmes found"
+      },
+      "created": "Новый Sozlesme создан с идентификатором {{ param }}",
+      "updated": "Sozlesme обновлен с идентификатором {{ param }}",
+      "deleted": "Sozlesme удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Sozlesme {{ id }}?"
+      },
+      "detail": {
+        "title": "Sozlesme"
+      },
+      "tip": "Tip",
+      "tarih": "Tarih",
+      "bitisTarihi": "Bitis Tarihi",
+      "sozlesmeninPaketleri": "Sozlesmenin Paketleri",
+      "fatura": "Fatura",
+      "musteri": "Musteri",
+      "telNo": "Tel No"
+    }
+  }
+}

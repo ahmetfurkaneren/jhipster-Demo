@@ -1,0 +1,62 @@
+{
+  "name": "Sozlesme",
+  "fields": [
+    {
+      "fieldName": "tip",
+      "fieldType": "Tip",
+      "fieldValues": "AnaPaket,EkPaket"
+    },
+    {
+      "fieldName": "tarih",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "bitisTarihi",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "sozlesmeninPaketleri",
+      "otherEntityRelationshipName": "sozlesme",
+      "relationshipName": "sozlesmeninPaketleri"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "fatura",
+      "otherEntityRelationshipName": "sozlesme",
+      "relationshipName": "fatura"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "musteri",
+      "otherEntityRelationshipName": "sozlesme",
+      "relationshipValidateRules": "required",
+      "relationshipName": "musteri",
+      "otherEntityField": "ad"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "telNo",
+      "otherEntityRelationshipName": "sozlesme",
+      "relationshipValidateRules": "required",
+      "relationshipName": "telNo",
+      "otherEntityField": "numara"
+    }
+  ],
+  "changelogDate": "20201209110955",
+  "entityTableName": "sozlesme",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

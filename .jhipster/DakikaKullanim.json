@@ -1,0 +1,48 @@
+{
+  "name": "DakikaKullanim",
+  "fields": [
+    {
+      "fieldName": "tarih",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "miktar",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sozlesmeninPaketleri",
+      "otherEntityRelationshipName": "dakikaKullanim",
+      "relationshipValidateRules": "required",
+      "relationshipName": "sozlesmeninPaketleri",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "telNo",
+      "otherEntityRelationshipName": "dakikaKullanim",
+      "relationshipValidateRules": "required",
+      "relationshipName": "telNo",
+      "otherEntityField": "numara"
+    }
+  ],
+  "changelogDate": "20201209111255",
+  "entityTableName": "dakika_kullanim",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

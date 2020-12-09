@@ -1,0 +1,24 @@
+{
+  "jhipsterDemoApp": {
+    "sirketBilgileri": {
+      "home": {
+        "title": "SirketBilgileris",
+        "createLabel": "Genera un nuovo Sirket Bilgileri",
+        "createOrEditLabel": "Genera o modifica un Sirket Bilgileri",
+        "notFound": "No Sirket Bilgileris found"
+      },
+      "created": "&Egrave; stato generato un nuovo Sirket Bilgileri con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Sirket Bilgileri identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Sirket Bilgileri con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Sirket Bilgileri {{ id }}?"
+      },
+      "detail": {
+        "title": "Sirket Bilgileri"
+      },
+      "sirketAdi": "Sirket Adi",
+      "sirketAdresi": "Sirket Adresi",
+      "musteri": "Musteri"
+    }
+  }
+}

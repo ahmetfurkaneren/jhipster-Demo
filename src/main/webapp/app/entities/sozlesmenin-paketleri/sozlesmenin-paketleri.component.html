@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.home.title">Sozlesmenin Paketleris</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-sozlesmenin-paketleri" [routerLink]="['/sozlesmenin-paketleri/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.home.createLabel">
+            Create a new Sozlesmenin Paketleri
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="sozlesmeninPaketleris?.length === 0">
+        <span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.home.notFound">No sozlesmeninPaketleris found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="sozlesmeninPaketleris && sozlesmeninPaketleris.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.fiyat">Fiyat</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.baslangicTarihi">Baslangic Tarihi</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.bitisTarihi">Bitis Tarihi</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.kalanDakika">Kalan Dakika</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.kalanSms">Kalan Sms</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.kalanInternet">Kalan Internet</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.sozlesme">Sozlesme</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.sozlesmeninPaketleri.paketler">Paketler</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sozlesmeninPaketleri of sozlesmeninPaketleris ;trackBy: trackId">
+                    <td><a [routerLink]="['/sozlesmenin-paketleri', sozlesmeninPaketleri.id, 'view']">{{ sozlesmeninPaketleri.id }}</a></td>
+                    <td>{{ sozlesmeninPaketleri.fiyat }}</td>
+                    <td>{{ sozlesmeninPaketleri.baslangicTarihi | date:'medium' }}</td>
+                    <td>{{ sozlesmeninPaketleri.bitisTarihi | date:'medium' }}</td>
+                    <td>{{ sozlesmeninPaketleri.kalanDakika }}</td>
+                    <td>{{ sozlesmeninPaketleri.kalanSms }}</td>
+                    <td>{{ sozlesmeninPaketleri.kalanInternet }}</td>
+                    <td>
+                        <div *ngIf="sozlesmeninPaketleri.sozlesme">
+                            <a [routerLink]="['/sozlesme', sozlesmeninPaketleri.sozlesme?.id, 'view']" >{{ sozlesmeninPaketleri.sozlesme?.id }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="sozlesmeninPaketleri.paketler">
+                            <a [routerLink]="['/paketler', sozlesmeninPaketleri.paketler?.id, 'view']" >{{ sozlesmeninPaketleri.paketler?.paketAdi }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/sozlesmenin-paketleri', sozlesmeninPaketleri.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/sozlesmenin-paketleri', sozlesmeninPaketleri.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(sozlesmeninPaketleri)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="simKartBilgileri">
+            <h2><span jhiTranslate="jhipsterDemoApp.simKartBilgileri.detail.title">Sim Kart Bilgileri</span> {{ simKartBilgileri.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterDemoApp.simKartBilgileri.pinNo">Pin No</span></dt>
+                <dd>
+                    <span>{{ simKartBilgileri.pinNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.simKartBilgileri.pukNo">Puk No</span></dt>
+                <dd>
+                    <span>{{ simKartBilgileri.pukNo }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.simKartBilgileri.barkod">Barkod</span></dt>
+                <dd>
+                    <span>{{ simKartBilgileri.barkod }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.simKartBilgileri.bitMiktari">Bit Miktari</span></dt>
+                <dd>
+                    <span>{{ simKartBilgileri.bitMiktari }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.simKartBilgileri.sozlesme">Sozlesme</span></dt>
+                <dd>
+                    <div *ngIf="simKartBilgileri.sozlesme">
+                        <a [routerLink]="['/sozlesme', simKartBilgileri.sozlesme?.id, 'view']">{{ simKartBilgileri.sozlesme?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sim-kart-bilgileri', simKartBilgileri.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

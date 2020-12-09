@@ -1,0 +1,25 @@
+{
+  "jhipsterDemoApp": {
+    "smsKullanim": {
+      "home": {
+        "title": "SmsKullanims",
+        "createLabel": "Genera un nuovo Sms Kullanim",
+        "createOrEditLabel": "Genera o modifica un Sms Kullanim",
+        "notFound": "No Sms Kullanims found"
+      },
+      "created": "&Egrave; stato generato un nuovo Sms Kullanim con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Sms Kullanim identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Sms Kullanim con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Sms Kullanim {{ id }}?"
+      },
+      "detail": {
+        "title": "Sms Kullanim"
+      },
+      "tarih": "Tarih",
+      "icerik": "Icerik",
+      "sozlesmeninPaketleri": "Sozlesmenin Paketleri",
+      "telNo": "Tel No"
+    }
+  }
+}

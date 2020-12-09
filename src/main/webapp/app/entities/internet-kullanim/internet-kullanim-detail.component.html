@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="internetKullanim">
+            <h2><span jhiTranslate="jhipsterDemoApp.internetKullanim.detail.title">Internet Kullanim</span> {{ internetKullanim.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterDemoApp.internetKullanim.tarih">Tarih</span></dt>
+                <dd>
+                    <span>{{ internetKullanim.tarih }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.internetKullanim.miktar">Miktar</span></dt>
+                <dd>
+                    <span>{{ internetKullanim.miktar }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterDemoApp.internetKullanim.sozlesmeninPaketleri">Sozlesmenin Paketleri</span></dt>
+                <dd>
+                    <div *ngIf="internetKullanim.sozlesmeninPaketleri">
+                        <a [routerLink]="['/sozlesmenin-paketleri', internetKullanim.sozlesmeninPaketleri?.id, 'view']">{{ internetKullanim.sozlesmeninPaketleri?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/internet-kullanim', internetKullanim.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

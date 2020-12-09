@@ -1,0 +1,76 @@
+{
+  "name": "Musteri",
+  "fields": [
+    {
+      "fieldName": "ad",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "soyad",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "unique"
+      ]
+    },
+    {
+      "fieldName": "parola",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "tC",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "minlength",
+        "maxlength",
+        "required"
+      ],
+      "fieldValidateRulesMinlength": "11",
+      "fieldValidateRulesMaxlength": "11"
+    },
+    {
+      "fieldName": "musteriTipi",
+      "fieldType": "MusteriTipi",
+      "fieldValues": "Bireysel,Kurumsal"
+    },
+    {
+      "fieldName": "dogumTarihi",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "sozlesme",
+      "otherEntityRelationshipName": "musteri",
+      "relationshipName": "sozlesme"
+    }
+  ],
+  "changelogDate": "20201209110555",
+  "entityTableName": "musteri",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

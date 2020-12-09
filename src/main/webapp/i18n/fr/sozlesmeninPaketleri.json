@@ -1,0 +1,32 @@
+{
+  "jhipsterDemoApp": {
+    "sozlesmeninPaketleri": {
+      "home": {
+        "title": "SozlesmeninPaketleris",
+        "createLabel": "Créer un nouveau Sozlesmenin Paketleri",
+        "createOrEditLabel": "Créer ou éditer un Sozlesmenin Paketleri",
+        "notFound": "Aucun Sozlesmenin Paketleri trouvé"
+      },
+      "created": "Un nouveau Sozlesmenin Paketleri a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Sozlesmenin Paketleri avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Sozlesmenin Paketleri avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Sozlesmenin Paketleri {{ id }} ?"
+      },
+      "detail": {
+        "title": "Sozlesmenin Paketleri"
+      },
+      "fiyat": "Fiyat",
+      "baslangicTarihi": "Baslangic Tarihi",
+      "bitisTarihi": "Bitis Tarihi",
+      "kalanDakika": "Kalan Dakika",
+      "kalanSms": "Kalan Sms",
+      "kalanInternet": "Kalan Internet",
+      "dakikaKullanim": "Dakika Kullanim",
+      "smsKullanim": "Sms Kullanim",
+      "internetKullanim": "Internet Kullanim",
+      "sozlesme": "Sozlesme",
+      "paketler": "Paketler"
+    }
+  }
+}

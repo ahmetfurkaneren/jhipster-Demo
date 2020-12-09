@@ -1,0 +1,115 @@
+{
+  "name": "Paketler",
+  "fields": [
+    {
+      "fieldName": "paketAdi",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "unique"
+      ]
+    },
+    {
+      "fieldName": "aciklama",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "baslangicTarihi",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "bitisTarihi",
+      "fieldType": "Instant",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "fiyat",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "yeniMusteriFiyat",
+      "fieldType": "Long",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "tahahutSure",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "dakika",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "sms",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "internet",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "aktif",
+      "fieldType": "Aktif",
+      "fieldValues": "Akrif,Pasif"
+    },
+    {
+      "fieldName": "tip",
+      "fieldType": "Tip",
+      "fieldValues": "AnaPaket,EkPaket"
+    },
+    {
+      "fieldName": "paketTipi",
+      "fieldType": "PaketTipi",
+      "fieldValues": "Faturali,Faturasiz"
+    },
+    {
+      "fieldName": "donem",
+      "fieldType": "Donem",
+      "fieldValues": "Aylik,Haftalik,Gunluk",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "dakikaUcret",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "smsUcret",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "internetUcret",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "sozlesmeninPaketleri",
+      "otherEntityRelationshipName": "paketler",
+      "relationshipName": "sozlesmeninPaketleri"
+    }
+  ],
+  "changelogDate": "20201209110755",
+  "entityTableName": "paketler",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,29 @@
+{
+  "jhipsterDemoApp": {
+    "musteri": {
+      "home": {
+        "title": "Musteris",
+        "createLabel": "Genera un nuovo Musteri",
+        "createOrEditLabel": "Genera o modifica un Musteri",
+        "notFound": "No Musteris found"
+      },
+      "created": "&Egrave; stato generato un nuovo Musteri con identificatore {{ param }}",
+      "updated": "&Egrave; stato aggiornato Musteri identificato da {{ param }}",
+      "deleted": "&Egrave; stato eliminato Musteri con identificatore {{ param }}",
+      "delete": {
+        "question": "Sei sicuro di volere eliminare Musteri {{ id }}?"
+      },
+      "detail": {
+        "title": "Musteri"
+      },
+      "ad": "Ad",
+      "soyad": "Soyad",
+      "email": "Email",
+      "parola": "Parola",
+      "tC": "T C",
+      "musteriTipi": "Musteri Tipi",
+      "dogumTarihi": "Dogum Tarihi",
+      "sozlesme": "Sozlesme"
+    }
+  }
+}

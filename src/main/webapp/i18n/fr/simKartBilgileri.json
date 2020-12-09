@@ -1,0 +1,26 @@
+{
+  "jhipsterDemoApp": {
+    "simKartBilgileri": {
+      "home": {
+        "title": "SimKartBilgileris",
+        "createLabel": "Créer un nouveau Sim Kart Bilgileri",
+        "createOrEditLabel": "Créer ou éditer un Sim Kart Bilgileri",
+        "notFound": "Aucun Sim Kart Bilgileri trouvé"
+      },
+      "created": "Un nouveau Sim Kart Bilgileri a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Sim Kart Bilgileri avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Sim Kart Bilgileri avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Sim Kart Bilgileri {{ id }} ?"
+      },
+      "detail": {
+        "title": "Sim Kart Bilgileri"
+      },
+      "pinNo": "Pin No",
+      "pukNo": "Puk No",
+      "barkod": "Barkod",
+      "bitMiktari": "Bit Miktari",
+      "sozlesme": "Sozlesme"
+    }
+  }
+}

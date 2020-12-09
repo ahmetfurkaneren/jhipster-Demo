@@ -1,0 +1,73 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="jhipsterDemoApp.simKartBilgileri.home.title">Sim Kart Bilgileris</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-sim-kart-bilgileri" [routerLink]="['/sim-kart-bilgileri/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="jhipsterDemoApp.simKartBilgileri.home.createLabel">
+            Create a new Sim Kart Bilgileri
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="simKartBilgileris?.length === 0">
+        <span jhiTranslate="jhipsterDemoApp.simKartBilgileri.home.notFound">No simKartBilgileris found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="simKartBilgileris && simKartBilgileris.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.simKartBilgileri.pinNo">Pin No</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.simKartBilgileri.pukNo">Puk No</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.simKartBilgileri.barkod">Barkod</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.simKartBilgileri.bitMiktari">Bit Miktari</span></th>
+                    <th scope="col" ><span jhiTranslate="jhipsterDemoApp.simKartBilgileri.sozlesme">Sozlesme</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let simKartBilgileri of simKartBilgileris ;trackBy: trackId">
+                    <td><a [routerLink]="['/sim-kart-bilgileri', simKartBilgileri.id, 'view']">{{ simKartBilgileri.id }}</a></td>
+                    <td>{{ simKartBilgileri.pinNo }}</td>
+                    <td>{{ simKartBilgileri.pukNo }}</td>
+                    <td>{{ simKartBilgileri.barkod }}</td>
+                    <td>{{ simKartBilgileri.bitMiktari }}</td>
+                    <td>
+                        <div *ngIf="simKartBilgileri.sozlesme">
+                            <a [routerLink]="['/sozlesme', simKartBilgileri.sozlesme?.id, 'view']" >{{ simKartBilgileri.sozlesme?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/sim-kart-bilgileri', simKartBilgileri.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/sim-kart-bilgileri', simKartBilgileri.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(simKartBilgileri)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+{
+  "jhipsterDemoApp": {
+    "musteri": {
+      "home": {
+        "title": "Musteris",
+        "createLabel": "Создать новый Musteri",
+        "createOrEditLabel": "Создать или отредактировать Musteri",
+        "notFound": "No Musteris found"
+      },
+      "created": "Новый Musteri создан с идентификатором {{ param }}",
+      "updated": "Musteri обновлен с идентификатором {{ param }}",
+      "deleted": "Musteri удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Musteri {{ id }}?"
+      },
+      "detail": {
+        "title": "Musteri"
+      },
+      "ad": "Ad",
+      "soyad": "Soyad",
+      "email": "Email",
+      "parola": "Parola",
+      "tC": "T C",
+      "musteriTipi": "Musteri Tipi",
+      "dogumTarihi": "Dogum Tarihi",
+      "sozlesme": "Sozlesme"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <!--
+        Added the constraints for entity InternetKullanim.
+    -->
+    <changeSet id="20201209111455-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="sozlesmenin_paketleri_id"
+                                 baseTableName="internet_kullanim"
+                                 constraintName="fk_internet_kullanim_sozlesmenin_paketleri_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sozlesmenin_paketleri"/>
+
+    </changeSet>
+</databaseChangeLog>

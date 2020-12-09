@@ -1,0 +1,25 @@
+{
+  "jhipsterDemoApp": {
+    "telNo": {
+      "home": {
+        "title": "Tel Nos",
+        "createLabel": "Maak een nieuwe Tel No",
+        "createOrEditLabel": "Maak of wijzig een Tel No",
+        "notFound": "No Tel Nos found"
+      },
+      "created": "A new Tel No is created with identifier {{ param }}",
+      "updated": "A Tel No is updated with identifier {{ param }}",
+      "deleted": "A Tel No is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Tel No {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Tel No"
+      },
+      "numara": "Numara",
+      "sozlesme": "Sozlesme",
+      "dakikaKullanim": "Dakika Kullanim",
+      "smsKullanim": "Sms Kullanim"
+    }
+  }
+}
